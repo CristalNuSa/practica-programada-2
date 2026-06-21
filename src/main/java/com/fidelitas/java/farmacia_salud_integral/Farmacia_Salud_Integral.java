@@ -119,7 +119,38 @@ public class Farmacia_Salud_Integral {
                         break;
                     case 4:
                         System.out.println("\n===== ELIMINAR PRODUCTO =====");
-
+                        
+                        System.out.println("Ingrese el Codigo del producto a eliminar");
+                        int codigo = sc.nextInt();
+                        
+                        /*
+                        "ProductoBase" → el tipo de objeto que se almacena
+                        "CodigoEliminar" → el nombre de la variable
+                        "= null" → inicialmente no apunta a ningún objeto
+                        */
+                        
+                        //Variable creada para guardar el codigo a eliminar
+                        ProductoBase CodigoEliminar = null;
+                        
+                        //"Para cada ProductoBase llamado p en productos."
+                        for (ProductoBase p : productos) {
+                            //Aqui revisa uno a uno y verifica si es el codigo que nosotros habiamos ingresado
+                            if (p.getCodigo() == codigo){
+                                //Cuando lo encuentra se detiene y empieza el if
+                                CodigoEliminar = p;
+                                break;
+                            }
+                        }
+                        
+                        //Verifica si codigo eliminar es diferente a null
+                        if (CodigoEliminar != null) {
+                            //Remueve el objeto que le pertenece ese codigo
+                            productos.remove(CodigoEliminar);
+                            System.out.println("Producto eliminado correctamente.");
+                        } else {
+                            System.out.println("Producto no encontrado");
+                        }
+                        
                         break;
 
                     case 5:

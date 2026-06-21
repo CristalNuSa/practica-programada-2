@@ -28,7 +28,7 @@ public abstract class ProductoBase {
 
     public void setCantInventario(int cantInventario) {
         if (cantInventario == 0 || cantInventario < 0) {
-            System.out.println("La cantidad de producto no puede estar vacío ni ser negativo");
+            System.out.println("La cantidad del producto no puede estar vacío ni ser negativo");
         } else {
             this.cantInventario = cantInventario;
         }
