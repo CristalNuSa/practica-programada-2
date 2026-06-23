@@ -27,7 +27,11 @@ public abstract class ProductoBase {
     }
 
     public void setCantInventario(int cantInventario) {
-        this.cantInventario = cantInventario;
+        if (cantInventario < 0) {
+            System.out.println("La cantidad del producto no puede estar vacío ni ser negativo");
+        } else {
+            this.cantInventario = cantInventario;
+        }
     }
 
     public int getCodigo() {
@@ -39,7 +43,11 @@ public abstract class ProductoBase {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        if (nombre == null) {
+            System.out.println("El Nombre no puede estar vacío.");
+        } else {
+            this.nombre = nombre;
+        }
     }
 
     public double getPrecio() {
@@ -47,16 +55,20 @@ public abstract class ProductoBase {
     }
 
     public void setPrecio(double precio) {
-        this.precio = precio;
+        if (precio == 0 || precio < 0) {
+            System.out.println("El Precio del producto no puede estar vacío ni ser negativo.");
+        } else {
+            this.precio = precio;
+        }
     }
     
     public abstract double PrecioTotal();
     
     public String descripcion() {
-        return "codigo=" + codigo 
-                + ", nombre=" + nombre 
-                + ", precio=" + precio 
-                + ", cantInventario=" + cantInventario;
+        return "codigo = " + codigo + "\n"
+                + "Nombre = " + nombre + "\n"
+                + "Precio = " + precio + "\n"
+                + "CantInventario = " + cantInventario;
     }
     
     public final void imprimirDescripcion() {
