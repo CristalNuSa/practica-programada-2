@@ -9,7 +9,7 @@ package com.fidelitas.java.farmacia_salud_integral;
  * @author crisn
  */
 public abstract class ProductoBase {
-    
+
     private final int codigo;
     private String nombre;
     private double precio;
@@ -61,19 +61,17 @@ public abstract class ProductoBase {
             this.precio = precio;
         }
     }
-    
+
     public abstract double PrecioTotal();
-    
+
     public String descripcion() {
         return "codigo = " + codigo + "\n"
                 + "Nombre = " + nombre + "\n"
                 + "Precio = " + precio + "\n"
                 + "CantInventario = " + cantInventario;
     }
-    
+
     public final void imprimirDescripcion() {
         System.out.println("[Producto]: " + descripcion());
     }
-    
-    
 }

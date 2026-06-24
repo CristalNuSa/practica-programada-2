@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  * Diego Benavides.
  */
 public class Farmacia_Salud_Integral {
-
+    
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -59,6 +59,7 @@ public class Farmacia_Salud_Integral {
 
                         System.out.println("Digite la cantidad:");
                         int cant = sc.nextInt();
+                        sc.nextLine();
 
                         if (cod < 0 || cod == 0 || nombre.equals("") || precio < 0 || cant <= 0) {
                             System.out.println("No se pudo registrar. Hay datos incorrectos.");
@@ -69,35 +70,30 @@ public class Farmacia_Salud_Integral {
                             case 1:
                                 Producto producto1 = new Producto(cod, nombre, precio, cant);
                                 productos.add(producto1);
-
                                 System.out.println("Producto registrado correctamente.");
                                 break;
 
                             case 2:
-                                ProductoDescuento producto = new ProductoDescuento(cod, nombre, precio, cant);
-                                productos.add(producto);
-
+                                ProductoDescuento producto2 = new ProductoDescuento(cod, nombre, precio, cant);
+                                productos.add(producto2);
                                 System.out.println("Producto registrado correctamente.");
                                 break;
 
                             case 3:
                                 Producto producto3 = new Producto(cod, nombre, precio, cant);
                                 productos.add(producto3);
-
                                 System.out.println("Producto registrado correctamente.");
                                 break;
 
                             case 4:
                                 Producto producto4 = new Producto(cod, nombre, precio, cant);
                                 productos.add(producto4);
-
                                 System.out.println("Producto registrado correctamente.");
                                 break;
 
                             case 5:
                                 Producto producto5 = new Producto(cod, nombre, precio, cant);
                                 productos.add(producto5);
-
                                 System.out.println("Producto registrado correctamente.");
                                 break;
 
@@ -155,38 +151,29 @@ public class Farmacia_Salud_Integral {
                             for (ProductoBase p : productos) {
                                 p.imprimirDescripcion();
                                 System.out.println("Precio total en inventario: " + p.PrecioTotal());
-                                System.out.println("--------------------------------");
+                                System.out.println("--------------------------------\n");
                             }
                         }
 
                         break;
+
                     case 4:
                         System.out.println("\n===== ELIMINAR PRODUCTO =====");
 
-                        System.out.println("Ingrese el Codigo del producto a eliminar");
+                        System.out.println("Ingrese el Codigo del producto a eliminar:");
                         int codigo = sc.nextInt();
+                        sc.nextLine();
 
-                        /*
-                        "ProductoBase" → el tipo de objeto que se almacena
-                        "CodigoEliminar" → el nombre de la variable
-                        "= null" → inicialmente no apunta a ningún objeto
-                         */
-                        //Variable creada para guardar el codigo a eliminar
                         ProductoBase CodigoEliminar = null;
 
-                        //"Para cada ProductoBase llamado p en productos."
                         for (ProductoBase p : productos) {
-                            //Aqui revisa uno a uno y verifica si es el codigo que nosotros habiamos ingresado
                             if (p.getCodigo() == codigo) {
-                                //Cuando lo encuentra se detiene y empieza el if
                                 CodigoEliminar = p;
                                 break;
                             }
                         }
 
-                        //Verifica si codigo eliminar es diferente a null
                         if (CodigoEliminar != null) {
-                            //Remueve el objeto que le pertenece ese codigo
                             productos.remove(CodigoEliminar);
                             System.out.println("Producto eliminado correctamente.");
                         } else {
@@ -273,6 +260,5 @@ public class Farmacia_Salud_Integral {
         } while (opcion != 7);
 
         sc.close();
-
     }
 }
