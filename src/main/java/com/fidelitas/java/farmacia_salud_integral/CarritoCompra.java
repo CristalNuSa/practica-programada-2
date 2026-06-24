@@ -63,10 +63,10 @@ public class CarritoCompra {
 
     @Override
     public String toString() {
-        return "Producto{" + "codigo=" + codigo 
-                + ", nombre=" + nombre 
-                + ", precio=" + precio 
-                + ", cantInventario=" + cantInventario + '}';
+        return "Producto{ " + " Codigo = " + codigo 
+                + ", Nombre=" + nombre 
+                + ", Precio=" + precio 
+                + ", Cantidad en el Inventario = " + cantInventario + '}';
     }
     
 }

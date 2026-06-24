@@ -24,6 +24,9 @@ public class Producto extends ProductoBase {
         return total + calculo;
     }
 
-        
+    @Override
+    public String descripcion() {
+        return super.descripcion() + ", impuestos = $" + impuestos;
+    }    
 
 }

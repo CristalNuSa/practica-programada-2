@@ -27,7 +27,7 @@ public class ProductoDescuento extends ProductoBase{
 
     @Override
     public String descripcion() {
-        return super.descripcion() + ", impuestos=" + impuestos + ", descuento=" + descuento;
+        return super.descripcion() + ", impuestos = $" + impuestos + ", descuento = $" + descuento;
     }
     
     

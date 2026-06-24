@@ -65,14 +65,14 @@ public abstract class ProductoBase {
     public abstract double PrecioTotal();
     
     public String descripcion() {
-        return "codigo=" + codigo 
-                + ", nombre=" + nombre 
-                + ", precio=" + precio 
-                + ", cantInventario=" + cantInventario;
+        return "Codigo = " + codigo 
+                + ", Nombre = " + nombre 
+                + ", Precio = " + precio 
+                + ", Cantidad en el Inventari = " + cantInventario;
     }
     
     public final void imprimirDescripcion() {
-        System.out.println("[Producto]: " + descripcion());
+        System.out.println("[Producto]:\n " + descripcion());
     }
     
     
